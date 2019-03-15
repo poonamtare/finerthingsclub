@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1>Welcome to the Finer Things Club.</h1> 
+                <p>An exclusive club where we discuss books over fine dining and elegant music...</p>
+                <p>If you have seen The Office, you will know about us!</p>
+                <p>
+                    <a class= "btn btn-primary btn-large" href="/books/new"> Add to upcoming book list for Finer Things Club!</a>
+                </p>
+            </div>
+        </header>
+        
+        <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+            <%  books.forEach(function(book){  %>
+                <div class=" col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                       <img src="<%= book.image %>"> 
+                       <div class="caption">
+                            <h4><%= book.name   %></h4>  
+                       </div>
+                       <p>
+                           <a class="btn btn-primary" href="/books/<%= book._id %>">More Info</a>
+                       </p>
+                    </div>
+                </div>
+            <% });  %>   
+        </div>
+</div>
+<% include ../partials/footer %>
